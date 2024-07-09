@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8i exercise</title>
+    <style>
+        button {
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>8i</h1>
+    <button onclick="
+        guess = 'heads';
+        playGame(guess);
+    ">heads</button>
+    <button onclick="
+        guess = 'tails';
+        playGame(guess);
+    ">tails</button>
+    <button onclick="
+        score.wins = 0;
+        score.losses = 0;
+        localStorage.removeItem('score');
+    ">Reload Game</button>
+</body>
+
+<script>
+    const score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0
+    };
+
+    let guess = '';
+    
+    function playGame(guess) {
+        let ranNum = Math.random();
+        let res = '';
+        let outcome = '';
+
+        (ranNum < 0.5) ? res = 'heads' : res = 'tails';
+        (guess === res) ? outcome = 'You win!' : outcome = 'You lose!';
+        (guess === res) ? score.wins++ : score.losses++;
+
+        localStorage.setItem('score', JSON.stringify(score));
+
+        alert(`You choose ${guess}. Computer choose ${res}. ${outcome}
+Win: ${score.wins} Lose: ${score.losses}`);
+    }
+</script>
+
+</html>

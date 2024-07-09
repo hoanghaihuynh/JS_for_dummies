@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9h - Challenge exercise</title>
+    <style>
+        * {
+            font-size: 32px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+        }
+        .son {
+            max-width: 1000px;
+            margin: 0 auto;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="son">
+            <input class="textInput" type="text" placeholder="Type something" onkeyup="handleOnKeyUp();">
+            <br>
+            <h2>hello</h2>
+        </div>
+    </div>
+</body>
+
+<script>
+    const x = document.querySelector('.textInput');
+    let h2tag = document.querySelector('h2');
+    function handleOnKeyUp() {
+        h2tag.innerHTML = x.value;
+    }
+</script>
+
+</html>

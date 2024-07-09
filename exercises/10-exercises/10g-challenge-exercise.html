@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Lesson 10</title>
+    <link rel="stylesheet" href="../../styles/cssExercise/css10-exercises.css">
+</head>
+<body>
+     <button class="js-gamingBtn toggleBtn" onclick="checkOnlyToggledBtn(gamingBtn, musicBtn, techBtn);">Gaming</button>
+     <button class="js-musicBtn toggleBtn" onclick="checkOnlyToggledBtn(musicBtn, gamingBtn, techBtn);">Music</button>
+     <button class="js-techBtn toggleBtn" onclick="checkOnlyToggledBtn(techBtn, gamingBtn, musicBtn);">Tech</button>
+</body>
+
+<script>
+    // 10g
+    let gamingBtn = document.querySelector('.js-gamingBtn');
+    let musicBtn = document.querySelector('.js-musicBtn');
+    let techBtn = document.querySelector('.js-techBtn');
+
+    function checkOnlyToggledBtn(btn1, btn2, btn3) {
+        if (btn2.classList.contains('is-toggled') === false && btn3.classList.contains('is-toggled') === false) {
+            btn1.classList.add('is-toggled');
+        }
+        else {
+            btn2.classList.remove('is-toggled');
+            btn3.classList.remove('is-toggled');
+            btn1.classList.add('is-toggled');
+        }
+        
+    }
+</script>
+
+</html>

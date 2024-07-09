@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6: Variable</title>
+</head>
+<body>
+   <h1>Boolean</h1>
+     
+</body>
+<script>
+    // 6a
+    let hour = 19;
+    let message = '';
+    console.log(hour);
+    if (hour > 5 && hour <= 12) {
+        // console.log('Good morning!');
+        message = 'Good morning!';
+    }
+    else if (hour > 12 && hour <= 17) {
+        // console.log('Good afternoon!');
+        message = 'Good afternoon!';
+    }
+    else {
+        // console.log('Good night!');
+        message = 'Good night!';
+    }
+
+    // 6b
+    hour = 7;
+    console.log(hour);
+    if (hour > 5 && hour <= 12) {
+        console.log(message);
+    }
+    else if (hour > 12 && hour <= 17) {
+        console.log(message);
+    }
+    else {
+        console.log(message);
+    }
+    // 6c
+    const name = 'Ngoc Hung';
+    console.log(`${message} ${name}` )
+    // 6d 
+    let age = 65;
+    let young = false;
+    let senior = false;
+    if (age <= 6) {
+        young = true;
+        console.log('discount');
+    }
+    else if (age >= 65) {
+        senior = true;
+        console.log('discount');
+    }
+    else {
+        console.log('No discount');
+    }
+    let discount = age && (young || senior);
+    
+    console.log(discount);  
+    // 6e
+    const isHoliday = false;
+    discount = age && isHoliday;
+    // if(discount == true){
+    //     console.log('Discount');
+    // }
+    // else {
+    //     console.log('Not discount');
+    // }
+    // console.log(discount);
+    (discount === true) ? console.log('6e Discount') : console.log('6e Not discount');
+
+    // 6f, g, h
+    let ranNum = Math.random();
+    let res = '';
+    // if(ranNum < 0.5) {
+    //     res = 'heads';
+    // }
+    // else {
+    //     res = 'tails';
+    // }
+    (ranNum < 0.5) ? res = 'heads' : 'tails';
+    console.log(ranNum);
+    console.log(res);
+    // 6j
+    let guess = 'heads';
+    // if (guess === res) {
+    //     console.log('You win!');
+    // }
+    // else{
+    //     console.log('You lose!');
+    // }
+    (guess === res) ? console.log('6j You win!') : console.log('6j You lose!');
+</script>
+</html>

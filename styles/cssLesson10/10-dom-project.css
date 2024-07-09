@@ -1,0 +1,52 @@
+
+p {
+    margin: 20px;
+}
+button {
+    margin: 0px 20px 0;
+    cursor: pointer;
+}
+.subscribe-button {
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 10px 17px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+.is-supscribed {
+    background-color: rgb(240, 240, 240);
+    color: black;
+    font-weight: 500;
+}
+.div1 {
+    height: 40px;
+    margin: 0 0 0 20px;
+}
+.div1 input, .div1 button, .div1 p{
+    height: 100%;
+    margin: 0;
+}
+.div1 input {
+    padding: 0 0 0 10px;
+    border-radius: 2px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+.div1 button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 0 14px 0;
+    border-radius: 2px;
+}
+.total-price {
+    margin-top: 10px;
+    color: black;
+}
+
+.errorTxt {
+    color: red;
+}
+
+

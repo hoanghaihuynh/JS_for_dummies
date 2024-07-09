@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 9: DOM exercises</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+        div {
+            margin: 10px 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 9a -->
+     <button>9a</button>
+     <!-- 9b -->
+     <button class="changedBtn">9b</button>
+     <!-- 9c -->
+    <div>
+        <button onclick="chooseBtn('heads');">heads</button>
+        <button onclick="chooseBtn('tails');">tails</button>
+        <p class="btnChose"></p>
+    </div>
+    <!-- 9d -->
+    <div>
+        <input class="nameInput" type="text" placeholder="Name" onkeydown="handleNameKeyDown(event)">
+        <input type="submit" onclick="displayName()">
+    </div>
+</body>
+
+<script>
+    // 9a
+    console.log(document.querySelector('button'));
+    // 9b
+    document.querySelector('.changedBtn').innerHTML = '9b done!';
+    // 9c
+    let choose = '';
+    function chooseBtn(btn) {
+        (btn === 'heads') ? choose = 'heads' : choose = 'tails';
+        document.querySelector('.btnChose').innerHTML = `You chose: ${choose}`;
+    }
+    // 9d
+    function displayName() {
+        const nameValue = document.querySelector('.nameInput').value;
+        console.log(`Your name is: ${nameValue}`);
+    }
+    // 9e
+    function handleNameKeyDown(event) {
+        if (event.key === 'Enter') {
+            displayName();
+        }
+    }
+
+</script>
+
+</html>

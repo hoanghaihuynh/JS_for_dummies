@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10h Challenge Exercise</title>
+    <link rel="stylesheet" href="../../styles/general.css">
+    <link rel="stylesheet" href="../../styles/cssLesson10/10-dom-project.css">
+</head>
+<body>
+    <!-- <h1>DOM Project</h1> -->
+    <p>Youtube Subscribe Button</p>
+    <button class="js-subscribe-button subscribe-button" onclick="subscribe();">
+    Subscribe</button>    
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping</p>
+    <p>Orders over $40 = FREE shipping</p>
+    <div class="div1">
+        <input class="js-cost-input" type="text" placeholder="Cost of order" onkeydown="handleCostKeyDown(event)">
+        <button onclick="calculateTotal(event);">Calculate</button>
+        <p class="total-price"></p>
+    </div>
+</body>
+
+<script>
+    String(25);
+    console.log('25' - 5);
+    console.log('25' + 5);
+
+    window.document;
+    window.console.log('window');
+    // window.alert();
+
+    function subscribe() {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        if (buttonElement.innerText === 'Subscribe') {
+            buttonElement.innerHTML = 'Subscribed';
+            buttonElement.classList.add('is-supscribed');
+        }
+        else {
+            buttonElement.innerHTML = 'Subscribe';
+            buttonElement.classList.remove('is-supscribed');
+        }
+    }
+
+    function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+        let cost = Number(inputElement.value);
+        let errorDisplay = document.querySelector('.total-price');
+        if (cost < 0) {
+            errorDisplay.innerHTML = 'Error: cost cannot be less than $0';
+            errorDisplay.classList.add('errorTxt');
+        } 
+        else {
+            if (cost > 0 && cost < 40) {
+                cost = ((cost * 100) + 1000) / 100; 
+            }
+            errorDisplay.classList.remove('errorTxt');
+            document.querySelector('.total-price').innerHTML = `$${cost}`;
+        }
+    }
+    
+
+    function handleCostKeyDown(event) {
+        if (event.key === 'Enter') {
+            calculateTotal();
+        }
+    }
+</script>
+
+</html>

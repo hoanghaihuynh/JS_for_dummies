@@ -1,0 +1,45 @@
+* {
+    font-family: arial;
+    font-size: 22px;
+    margin: 3px;
+}
+body {
+    background-color: black;
+    display: flex;
+}
+button {
+    cursor: pointer;
+}
+.container {
+    max-width: 1000px;
+    /* height: 500px; */
+    margin: 0 auto;
+    display: inline-block;
+}
+.numberDisplaying {
+    width: 100%;
+    /* border: 1px solid white; */
+    padding: 5px 0 0 5px;
+    margin: 0 0 0 7px;
+    font-weight: bold;
+    font-size: 36px;
+    color: white;
+}
+.numberBtn {
+    color: white;
+    background-color: #333333;
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 24px;
+}
+.operatorBtn {
+    color: white;
+    background-color: rgb(254, 160, 10);
+    border: none;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 24px;
+}
