@@ -1,32 +1,26 @@
 
-const todoList = ['make dinner', 'wash dishes'];
+const todoList = ['nấu cơm', 'rửa chén'];
 
 renderTodoList();
 
 function renderTodoList() {
-    let todoListHTML = '';
+    let todoHTML = '';
 
     for (let i = 0; i < todoList.length; i++) {
-        const todo = todoList[i];
-        const html = `<p>${todo}</p>`;
-            todoListHTML += html;
+        const todoValue = todoList[i];
+        const html = `<p>${todoValue}</p>`;
+        todoHTML += html;
     }
+    document.querySelector('.js-todo-list').innerHTML = todoHTML;
 
-    console.log(todoListHTML);
-
-    document.querySelector('.js-todoList').innerHTML = todoListHTML;
+    console.log(todoHTML);
 }
 
 function addTodo() {
-    const inputElement = document.querySelector('.js-nameInput');
-    const name = inputElement.value;  
-    
+    const inputElement = document.querySelector('.js-name-input');
+    const name = inputElement.value;
     todoList.push(name);
     console.log(todoList);
-
-    inputElement.value = ''; 
-
+    inputElement.value = '';
     renderTodoList();
 }
-
-
