@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 11 Part 2</title>
+</head>
+<body>
+    <h1>Exercise 11: Challenge exercise</h1>
+</body>
+
+<script>
+    // 11v
+    for (let i = 1; i <= 20; i++) {
+        if (i % 3 === 0) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                console.log('FizzBuzz');
+                continue;
+            }
+            console.log('Fizz');
+            continue;
+        }
+        if (i % 5 === 0) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                console.log('FizzBuzz');
+                continue;
+            }
+            console.log('Buzz');
+            continue;
+        }
+        else {
+            console.log(i);
+        }
+    }
+    // 11w 
+    function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === word) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    function unique(array) {
+        const result = [];
+        for (let i = 0; i < array.length; i++) {
+            let word = array[i];
+            if (findIndex(result, word) === -1) {
+                result.push(array[i]);
+            }  
+        }
+        return result;
+    }
+    console.log(unique(['green', 'red', 'blue', 'red']));
+
+</script>
+
+</html>
