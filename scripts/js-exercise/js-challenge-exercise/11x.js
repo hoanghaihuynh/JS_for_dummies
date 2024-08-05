@@ -1,5 +1,16 @@
+/*
+    Local storage: 
+    1. Đặt localStorage.setItem ở nơi mà object/array thường
+    được thêm/sửa/xóa
+    2. Đặt localStorage.getItem, object mặc định ở đầu đoạn
+    code
+    3. Lưu ý: localstorage chỉ lưu giá trị ở dạng string
+    4. khi thêm/sửa/xóa phải chuyển sang kiểu dl string
+    5. khi đặt giá trị mặc định phải chuyển kiểu dl 
+    local storage sang dạng object/array
+*/ 
 
-const todoList = [
+const todoList = JSON.parse(localStorage.getItem('todoList')) || [
     {
         name: 'nấu cơm',
         dueDate: '2024-10-21'
@@ -53,6 +64,9 @@ function addTodo() {
             dueDate
         }
     );
+
+    localStorage.setItem('todoList', JSON.stringify(todoList));
+
     console.log(todoList);
     inputElement.value = '';
     renderTodoList();
