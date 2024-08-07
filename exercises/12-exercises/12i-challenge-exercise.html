@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 12i</title>
+    <style>
+        button {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercise 12g, 12h</h1>
+    <button onclick="
+        message++;
+    ">Add</button>
+    <button onclick="
+        message--;
+    ">Remove</button>
+</body>
+
+<script>
+    // 12i
+    let message = 2;
+    setInterval(function() {
+        if (message <= 0) {
+            message = 0;
+        }
+        if (document.title === 'Exercise 12i' && message > 0) {
+            document.title = `(${message}) New messages`;
+        }
+        else {
+            document.title = 'Exercise 12i';
+        }
+    } ,1000);
+
+</script>
+
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 12</title>
+    <title>Exercise 12f</title>
     <style>
         .button12c, .button-12d {
             font-size: 18px;
@@ -11,10 +11,7 @@
     </style>
 </head>
 <body>
-    <h1>Exercise 12</h1>
-    <!-- 12c, 12d -->
-    <button class="button12c" onclick="exercise12c();">Start</button>
-    <!-- 12e -->
+    <h1>12f</h1>
     <button class="button-12d" onclick="exercise12d();">Add to cart</button>
     <div>
         <p class="button-12d-js"></p>
@@ -22,30 +19,7 @@
 </body>
 
 <script>
-    // 12a 
-    const add = function() {
-        console.log(2 + 3);    
-    }
-    add();
-    add();
-    // 12b
-    function runTwice(param) {
-        console.log(param);
-        console.log(param);
-    }
-    runTwice(function() {
-        console.log('12b');
-    });
-    runTwice(add);
-    // 12c, 12d
-    const exercise12c = function() {
-        let textBtn = document.querySelector('.button12c');
-        setTimeout(function() {
-            textBtn.innerHTML = 'Finished';
-        }, 1000);   
-        textBtn.innerHTML = 'Loading...';  
-    };
-    // 12e, 12f
+    //12f
     let timeoutID;
     const exercise12d = function() {
         let added = document.querySelector('.button-12d-js');
