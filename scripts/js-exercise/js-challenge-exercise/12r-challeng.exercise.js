@@ -14,6 +14,59 @@ let intervalID;
 
 // }
 
+document.querySelector('.autoPlayBtn').addEventListener('click', function autoPlay() {
+    if (!isAutoPlaying) {
+        // console.log(!isAutoPlaying);
+        intervalID = setInterval(() => {
+            const playerMove = pickComputerMove();
+            playGame(playerMove);
+        },1000);
+        isAutoPlaying = true;
+        document.querySelector('.autoPlayBtn').innerHTML = 'Stop playing';
+    } 
+    else {
+        clearInterval(intervalID);
+        isAutoPlaying = false;
+        document.querySelector('.autoPlayBtn').innerHTML = 'Auto play';
+    }
+});
+
+document.querySelector('.resetScoreBtn').addEventListener('click', () => {
+    document.querySelector('.notify').innerHTML = `
+        Are you sure about that? 
+        <button class="yesBtn">Yes</button>
+        <button class="noBtn">No</button>       
+    `;
+
+    document.querySelector('.yesBtn').addEventListener('click', () => {
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+        document.querySelector('.notify').innerHTML = ``;
+    }) 
+  
+    document.querySelector('.noBtn').addEventListener('click', () => {
+        document.querySelector('.notify').innerHTML = ``;
+    })
+    // document.querySelector('.yesBtn').addEventListener('click', () => {
+    //     score.wins = 0;
+    //     score.losses = 0;
+    //     score.ties = 0;
+    //     localStorage.removeItem('score');
+    //     updateScoreElement();
+    // }) 
+
+    
+
+    // score.wins = 0;
+    // score.losses = 0;
+    // score.ties = 0;
+    // localStorage.removeItem('score');
+    // updateScoreElement();
+});
+
 function autoPlay() {
     if (!isAutoPlaying) {
         // console.log(!isAutoPlaying);
@@ -22,10 +75,12 @@ function autoPlay() {
             playGame(playerMove);
         },1000);
         isAutoPlaying = true;
+        document.querySelector('.autoPlayBtn').innerHTML = 'Stop playing';
     } 
     else {
         clearInterval(intervalID);
         isAutoPlaying = false;
+        document.querySelector('.autoPlayBtn').innerHTML = 'Auto play';
     }
 }
 
@@ -50,6 +105,16 @@ document.body.addEventListener('keydown', (event) => {
     }
     else if (event.key === 's') {
         playGame('Scissors');
+    }
+    else if (event.key === 'a') {
+        autoPlay();
+    }
+    else if (event.key === 'Backspace') {
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0
+        localStorage.removeItem('score');
+        updateScoreElement();
     }
 });
 

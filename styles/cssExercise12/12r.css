@@ -29,9 +29,14 @@ img {
     font-size: 26px;
     font-weight: 600;
 }
-.resetScoreBtn, .autoPlayBtn {
+.resetScoreBtn, .autoPlayBtn, .yesBtn, .noBtn {
     border: none;
     padding: 8px 12px;
     font-size: 16px;
     cursor: pointer;
+}
+.notify {
+    color: white;
+    margin: 10px 0;
+    font-weight: 400;
 }
