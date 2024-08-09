@@ -13,9 +13,9 @@
 <body>
     <h1>Exercise 12</h1>
     <!-- 12c, 12d -->
-    <button class="button12c" onclick="exercise12c();">Start</button>
+    <button class="button12c">Start</button>
     <!-- 12e -->
-    <button class="button-12d" onclick="exercise12d();">Add to cart</button>
+    <button class="button-12d">Add to cart</button>
     <div>
         <p class="button-12d-js"></p>
     </div> 
@@ -38,27 +38,53 @@
     });
     runTwice(add);
     // 12c, 12d
-    const exercise12c = function() {
+
+    /* const exercise12c = () => {
         let textBtn = document.querySelector('.button12c');
-        setTimeout(function() {
+        setTimeout(() => {
             textBtn.innerHTML = 'Finished';
         }, 1000);   
         textBtn.innerHTML = 'Loading...';  
-    };
+    }; */
+
+    document.querySelector('.button12c').addEventListener('click', () => {
+        let textBtn = document.querySelector('.button12c');
+        setTimeout(() => {
+            textBtn.innerHTML = 'Finished';
+        }, 1000);   
+        textBtn.innerHTML = 'Loading...';  
+    });
+
     // 12e, 12f
     let timeoutID;
-    const exercise12d = function() {
+    document.querySelector('.button-12d').addEventListener('click',() => {
         let added = document.querySelector('.button-12d-js');
         
         added.innerHTML = 'Added';
 
         clearTimeout(timeoutID);
 
-        timeoutID = setTimeout(function() {
+        timeoutID = setTimeout(() => {
             added.innerHTML = '';
         },2000);
         console.log(timeoutID);
-    };
+    });
+
+/* 
+    let timeoutID;
+    const exercise12d = () => {
+        let added = document.querySelector('.button-12d-js');
+        
+        added.innerHTML = 'Added';
+
+        clearTimeout(timeoutID);
+
+        timeoutID = setTimeout(() => {
+            added.innerHTML = '';
+        },2000);
+        console.log(timeoutID);
+    }; 
+*/
     
 </script>
 

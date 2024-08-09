@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>12f</h1>
-    <button class="button-12d" onclick="exercise12d();">Add to cart</button>
+    <button class="button-12d">Add to cart</button>
     <div>
         <p class="button-12d-js"></p>
     </div> 
@@ -21,18 +21,30 @@
 <script>
     //12f
     let timeoutID;
-    const exercise12d = function() {
+    document.querySelector('.button-12d').addEventListener('click', () => {
         let added = document.querySelector('.button-12d-js');
         
         added.innerHTML = 'Added';
 
         clearTimeout(timeoutID);
 
-        timeoutID = setTimeout(function() {
+        timeoutID = setTimeout(() => {
             added.innerHTML = '';
         },2000);
         console.log(timeoutID);
-    };
+    });
+    // const exercise12d = () => {
+    //     let added = document.querySelector('.button-12d-js');
+        
+    //     added.innerHTML = 'Added';
+
+    //     clearTimeout(timeoutID);
+
+    //     timeoutID = setTimeout(() => {
+    //         added.innerHTML = '';
+    //     },2000);
+    //     console.log(timeoutID);
+    // };
     
 </script>
 

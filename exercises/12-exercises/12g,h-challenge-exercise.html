@@ -12,25 +12,33 @@
 </head>
 <body>
     <h1>Exercise 12g, 12h</h1>
-    <button onclick="
-        message++;
-    ">Add</button>
-    <button onclick="
-        message--;
-    ">Remove</button>
+    <button class="plusBtn">Add</button>
+    <button class="minusBtn">Remove</button>
 </body>
 
 <script>
     // 12g, 12h
+    // let message = 2;
+    // setInterval(() => {
+    //     if (document.title === 'Exercise 12g, 12h') {
+    //         document.title = `(${message}) New messages`;
+    //     }
+    //     else {
+    //         document.title = 'Exercise 12g, 12h';
+    //     }
+    // } ,1000);
+
     let message = 2;
-    setInterval(function() {
+    document.querySelector('.plusBtn').addEventListener('click', () => { message++; });
+    document.querySelector('.minusBtn').addEventListener('click', () => { message--; });
+    document.querySelector('button').addEventListener('click', setInterval(() => {
         if (document.title === 'Exercise 12g, 12h') {
             document.title = `(${message}) New messages`;
         }
         else {
             document.title = 'Exercise 12g, 12h';
         }
-    } ,1000);
+    } ,1000));
 
 </script>
 

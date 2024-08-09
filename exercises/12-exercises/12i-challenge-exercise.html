@@ -22,8 +22,22 @@
 
 <script>
     // 12i
+    // let message = 2;
+    // setInterval(() => {
+    //     if (message <= 0) {
+    //         message = 0;
+    //     }
+    //     if (document.title === 'Exercise 12i' && message > 0) {
+    //         document.title = `(${message}) New messages`;
+    //     }
+    //     else {
+    //         document.title = 'Exercise 12i';
+    //     }
+    // } ,1000);
+
+    // 12i add listener
     let message = 2;
-    setInterval(function() {
+    document.querySelectorAll('button').addListener('click', setInterval(() => {
         if (message <= 0) {
             message = 0;
         }
@@ -33,7 +47,7 @@
         else {
             document.title = 'Exercise 12i';
         }
-    } ,1000);
+    } ,1000));
 
 </script>
 
